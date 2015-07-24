@@ -1,0 +1,5 @@
+node_modules
+.idea
+client/bower_components
+client/index.html
+styles/css

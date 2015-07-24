@@ -1,0 +1,63 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <base href="/">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body style="padding: 0 20px;">
+<!-- build:css app.css -->
+
+<!-- bower:css -->
+<link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+<!-- endinject -->
+<link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
+<link rel="stylesheet" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css">
+<!-- inject:css -->
+<link rel="stylesheet" href="styles/css/app.css">
+<!-- endinject -->
+
+<!-- endbuild -->
+
+
+<!-- Add your site or application content here -->
+<div id="ng-gulp-hapi" ng-app="ng-gulp-hapi" ng-class="stateClass">
+    <div class="row">
+      <div id="navbar" class="small-12" ui-view="navbar"></div>
+    </div>
+    <div class="row">
+      <div id="main-content" class="small-12" ui-view=""></div>
+    </div>
+</div>
+
+<!-- build:js app.js -->
+
+<!-- bower:js -->
+<!-- endinject -->
+
+<!-- modules:js -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- endinject -->
+
+<!-- endbuild -->
+
+<!-- build:remove -->
+<script type='text/javascript' id="__bs_script__">//<![CDATA[
+  document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.7.12.js'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+<!-- endbuild -->
+
+</body>
+</html>
