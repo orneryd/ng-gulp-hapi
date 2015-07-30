@@ -14,7 +14,7 @@ angular.module('ng-gulp-hapi')
     //  if (!_.includes(navItems, toState.name)) {
     //    e.preventDefault();
     //    $state.go(fromState.name);
-    //  }
+    //  }r
     //});
 
     $state.go('main');
