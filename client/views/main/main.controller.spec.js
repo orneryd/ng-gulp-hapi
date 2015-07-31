@@ -18,14 +18,11 @@ describe('Controller: MainCtrl', function () {
     scope = $rootScope.$new();
     MainCtrl = $controller('MainCtrl', {
       $scope: scope,
-      startupData: {},
-      assetMetaData: {},
-      currentOffers: {}
+      routeList:'string'
     });
   }));
 
-  //it('should attach a list of things to the scope', function () {
-  //  //$httpBackend.flush();
-  //  //expect(scope.awesomeThings.length).toBe(4);
-  //});
+  it('should attach the route list to the scope', function () {
+   expect(scope.routes).toBe('string');
+  });
 });

@@ -1,4 +1,8 @@
 <div id="main-content">
-    <h4>Main content</h4>
+    <h4>hello {{user.name}}</h4>
     <a ui-sref="modal" class="button button-info">Open Modal</a>
+    <ul>
+    	<li ng-repeat="route in routeList">{{route.route_NAME}}
+    	</li>
+    </ul>
 </div>

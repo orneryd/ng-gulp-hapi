@@ -17,6 +17,8 @@ angular.module('ng-gulp-hapi', [
 
     $httpProvider.interceptors.push('httpInterceptor');
 
+    $httpProvider.defaults.headers.post  = {'Content-Type': 'application/x-www-form-urlencoded'};
+
     $animateProvider.classNameFilter(/anim-/);
 
     $stateProvider.decorator('views', function (state, parent) {

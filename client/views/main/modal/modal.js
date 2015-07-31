@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ng-gulp-hapi')
-  .config(function($stateProvider) {
+  .config(function($stateProvider,appResolverProvider) {
     $stateProvider
       .state('modal', {
         parent: 'main',
@@ -10,7 +10,8 @@ angular.module('ng-gulp-hapi')
           this.$modalInstance = $modal.open({
             templateUrl: 'views/main/modal/modal.html',
             controller: 'ModalCtrl',
-            controllerAs: 'modal'
+            controllerAs: 'modal',
+            resolve: appResolverProvider.main
           });
         },
         onExit: function(){

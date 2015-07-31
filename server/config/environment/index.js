@@ -19,6 +19,10 @@ var all = {
   // Server ip
   ip: process.env.HAPI_IP || '127.0.0.1',
 
+  LBS: {
+    ip:'72.215.195.71'
+  }
+
 };
 
 // Export the config object based on the NODE_ENV

@@ -49,6 +49,7 @@ module.exports = function (config) {
       'bower_components/angular-foundation-toaster/toaster.js',
       'bower_components/angular-gettext/dist/angular-gettext.js',
       '../node_modules/jasmine-jquery/lib/jasmine-jquery.js',
+      'app.js',
       'components/**/*.js',
       'directives/directives.module.js',
       'directives/**/*.html',
@@ -59,8 +60,7 @@ module.exports = function (config) {
       'resources/**/*.js',
       'services/services.module.js',
       'services/**/*.js',
-      'views/**/*.js',
-      'app.js'
+      'views/**/*.js'
     ],
 
     exclude: [

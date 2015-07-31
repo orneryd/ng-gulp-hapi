@@ -7,7 +7,7 @@
 
 var Hapi = require('hapi');
 var _ = require('lodash');
-//var modules = require('./modules');
+var modules = require('./modules');
 var chalk = require('chalk');
 var config = require('./config/environment');
 
@@ -97,9 +97,9 @@ server.register(plugins, function(err) {
 /**
  * Add all the modules within the modules folder
  */
-//_.each(modules, function(element) {
-//  server.route(element);
-//});
+_.each(modules, function(element) {
+ server.route(element);
+});
 //
 
 /**

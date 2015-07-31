@@ -3,8 +3,9 @@
 module.exports = {
   getStartupData: function(req, reply){
     reply({
-      name: 'Tim',
+      name: 'Terry',
       age: 30
     })
   }
 };
+

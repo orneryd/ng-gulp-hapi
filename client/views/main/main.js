@@ -5,12 +5,12 @@ angular.module('ng-gulp-hapi')
     $stateProvider
       .state('main', {
         url: '/',
+        resolve: appResolverProvider.main,
         views: {
           '': {
             templateUrl: 'views/main/main.html',
             controller: 'MainCtrl',
-            controllerAs: 'main',
-            resolve: appResolverProvider.main
+            controllerAs: 'main'
           },
           'navbar': {
             templateUrl: 'components/navbar/navbar.html',
