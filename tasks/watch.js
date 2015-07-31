@@ -2,7 +2,7 @@
 
 /**
  * Watch files, and do things when they changes.
- * Recompile scss if needed.
+ * Recompile less if needed.
  * Reinject files
  */
 
@@ -11,7 +11,7 @@ var gulp       = require('gulp');
 var bwsrsync   = require('browser-sync').create();
 var watch      = require('gulp-watch');
 var inject     = require('gulp-inject');
-var sass       = require('gulp-sass');
+var less       = require('gulp-less');
 
 module.exports = function () {
   bwsrsync.init();
@@ -19,13 +19,13 @@ module.exports = function () {
   gulp.watch(['bower.json', 'client/.index.html'], ['inject']);
 
   gulp.watch([
-    'client/**/*.scss',
-    '!client/bower_components/**/*.scss'
-  ], ['sass']);
+    'client/**/*.less',
+    '!client/bower_components/**/*.less'
+  ], ['less']);
 
   var coreFiles = [
     '!client/bower_components/**/*',
-    '!client/**/*.scss',
+    '!client/**/*.less',
     '!client/**/*spec.js',
     'client/**/*.html',
     'client/**/*.js'

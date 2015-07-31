@@ -1,21 +1,27 @@
 'use strict';
 
 angular.module('ng-gulp-hapi')
-  .config(function($stateProvider,appResolverProvider) {
+  .config(function($stateProvider) {
     $stateProvider
       .state('modal', {
         parent: 'main',
         url: 'modal',
-        onEnter: function($modal){
+        // routeList comes from the parent, main.
+        onEnter: function($modal, routeList){
           this.$modalInstance = $modal.open({
             templateUrl: 'views/main/modal/modal.html',
             controller: 'ModalCtrl',
             controllerAs: 'modal',
-            resolve: appResolverProvider.main
+            backdrop: 'static',
+            resolve: {
+              routeList: function(){
+                return routeList;
+              }
+            }
           });
         },
         onExit: function(){
-          this.$modalInstance.dismiss();
+          this.$modalInstance.close();
         }
       });
   });

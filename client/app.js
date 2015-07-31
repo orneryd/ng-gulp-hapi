@@ -6,11 +6,11 @@ angular.module('ng-gulp-hapi', [
   'app.resources',
   'app.services',
   'ngSanitize',
+  'ui.bootstrap',
   'ui.router',
   'ui.lodash',
   'gettext',
-  'anim-in-out',
-  'mm.foundation'
+  'anim-in-out'
 ])
   .config(function ($provide, $stateProvider, $urlRouterProvider, $httpProvider, $animateProvider) {
     $urlRouterProvider.otherwise('/');
@@ -48,7 +48,7 @@ angular.module('ng-gulp-hapi', [
   .run(function (_, $rootScope, $state, gettextCatalog) {
 
     $rootScope.$state = $state;
-
+    $rootScope.loading = true;
     $rootScope.stateClass = $state.current.name;
 
     gettextCatalog.setCurrentLanguage('en-us');
@@ -66,6 +66,9 @@ angular.module('ng-gulp-hapi', [
     });
 
     $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+      if (toState.name === 'main'){
+        $rootScope.loading = false;
+      }
       //restore all query string parameters back to $search.search
       //$location.search(locationSearch || {});
       $rootScope.stateClass = toState.name;

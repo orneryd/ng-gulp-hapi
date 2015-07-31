@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Inject scss files in app.scss
+ * Inject less files in app.less
  */
 
 var gulp = require('gulp');
@@ -12,7 +12,8 @@ var sort = require('gulp-sort');
 module.exports = function () {
 
   var bowerSources = gulp.src([
-    'client/bower_components/foundation/scss/foundation.scss'
+    'client/bower_components/font-awesome/less/font-awesome.less',
+    'client/bower_components/bootstrap/less/bootstrap.less'
   ], {read: false});
 
   var bowerOpts = {
@@ -24,24 +25,24 @@ module.exports = function () {
     endtag: '// end:bower'
   };
 
-  var scssSources = gulp.src([
-    'client/components/**/*.scss',
-    'client/views/**/*.scss',
-    'client/directives/**/*.scss',
-    'client/modals/**/*.scss'
+  var lessSources = gulp.src([
+    'client/components/**/*.less',
+    'client/views/**/*.less',
+    'client/directives/**/*.less',
+    'client/modals/**/*.less'
   ], {read: false}).pipe(sort());
 
-  var scssOpts = {
+  var lessOpts = {
     relative: true,
     transform: function (filePath) {
       return '@import \'' + filePath + '\';';
     },
-    starttag: '// inject:scss',
-    endtag: '// end:scss'
+    starttag: '// inject:less',
+    endtag: '// end:less'
   };
 
-  return gulp.src('client/app.scss')
+  return gulp.src('client/app.less')
     .pipe(inject(bowerSources, bowerOpts))
-    .pipe(inject(scssSources, scssOpts))
+    .pipe(inject(lessSources, lessOpts))
     .pipe(gulp.dest('client'));
 };

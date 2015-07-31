@@ -7,39 +7,36 @@
 <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <base href="/">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-</head>
-<body style="padding: 0 20px;">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <base href="/">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+    </head>
+    <body id="ng-gulp-hapi" style="padding: 0 20px;"  ng-app="ng-gulp-hapi" ng-class="stateClass">
+        <div id="navbar" class="small-12" ui-view="navbar"></div>
 <!-- build:css app.css -->
 
 <!-- bower:css -->
-<link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
 <!-- endinject -->
-<link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
-<link rel="stylesheet" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css">
+        <link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
+        <link rel="stylesheet" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css">
 <!-- inject:css -->
-<link rel="stylesheet" href="styles/css/app.css">
+        <link rel="stylesheet" href="styles/css/app.css">
 <!-- endinject -->
 
 <!-- endbuild -->
 
 
 <!-- Add your site or application content here -->
-<div id="ng-gulp-hapi" ng-app="ng-gulp-hapi" ng-class="stateClass">
-    <div class="row">
-      <div id="navbar" class="small-12" ui-view="navbar"></div>
-    </div>
-    <div class="row">
-      <div id="main-content" class="small-12" ui-view=""></div>
-    </div>
-</div>
+        <div id="main-content" class="small-12" ui-view=""></div>
 
+        <div ng-if="loading" id="loading-overlay">
+            <span>Loading...</span>
+        </div>
 <!-- build:js app.js -->
 
 <!-- bower:js -->

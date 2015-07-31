@@ -1,0 +1,55 @@
+// inject:bower
+
+@import 'bower_components/font-awesome/less/font-awesome.less';
+
+@import 'bower_components/bootstrap/less/bootstrap.less';
+
+// end:bower
+
+
+div {
+  box-sizing: border-box;
+}
+
+i {
+  font-style: normal;
+}
+
+#ng-gulp-hapi {
+  &.modal {
+    display: block;
+  }
+  min-width: 768px;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  #loading-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(25, 25, 25, .2);
+    text-align: center;
+    padding-top: 100px;
+  }
+  /**
+   * App-wide Styles
+   */
+
+  #contentView {
+    padding: 0;
+    margin: 0;
+    max-width: initial;
+    position: relative;
+  }
+
+
+
+  // inject:less
+
+  @import 'components/navbar/navbar.less';
+
+  @import 'views/main/main.less';
+
+  @import 'views/main/modal/modal.less';
+
+  // end:less
+}

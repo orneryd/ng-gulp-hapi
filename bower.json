@@ -7,7 +7,6 @@
     "angular-cookies": "1.4.2",
     "angular-resource": "1.4.2",
     "angular-sanitize": "1.4.2",
-    "angular-foundation": "~0.6.0",
     "angular-gettext": "~2.1.0",
     "angular-ui-lodash": "*",
     "angular-ui-router": "~0.2.10",
@@ -17,8 +16,8 @@
     "jquery": "~2.1.3",
     "lodash": "~3.8.0",
     "moment": "~2.10.3",
-    "normalize.css": "~3.0.3",
-    "angular-foundation-toaster": "praesidio/angular-foundation-toaster#~0.0.4"
+    "bootstrap": "~3.3.5",
+    "angular-bootstrap": "~0.13.1"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",

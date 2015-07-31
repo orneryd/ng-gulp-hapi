@@ -36,7 +36,7 @@ var toDelete = [];
 module.exports = function (done) {
   runSequence(
     'jshint',
-    ['clean:dist', 'sass'],
+    ['clean:dist', 'less'],
     ['usemin', 'copy:dist'],
     ['scripts', 'cssmin'],
     'replace',
@@ -65,7 +65,7 @@ gulp.task('copy:dist', function () {
     '!client/styles/css/app.css',
     'client/assets/**/*',
     //'!client/assets/**/*.less',
-    '!client/assets/**/*.scss'
+    '!client/assets/**/*.less'
   ], {base: 'client'});
 
   return sq({objectMode: true}, assets)
