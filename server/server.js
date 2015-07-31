@@ -64,7 +64,9 @@ server.register(plugins, function(err) {
     });
 
     var indexView = function(request, reply) {
-      reply.view('index', {hostname: request.headers.host});
+      reply.view('index', {
+        hostname: request.headers.host
+      });
     };
 
     server.route({

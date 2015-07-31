@@ -9,7 +9,6 @@
 var startupController = require('./startup-ctrl');
 var config = require('../../config/environment');
 
-
 module.exports = [
   {
     method: 'GET',
