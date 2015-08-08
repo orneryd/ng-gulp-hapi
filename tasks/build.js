@@ -39,7 +39,7 @@ module.exports = function (done) {
     ['clean:dist', 'less'],
     ['usemin', 'copy:dist'],
     ['scripts', 'cssmin'],
-    'replace',
+    //'replace',
     'rev',
     'clean:finish',
     done);
@@ -126,23 +126,23 @@ gulp.task('scripts', function () {
   }
   return returnValue.pipe(gulp.dest(output + '/'));
 });
-
-gulp.task('replace', function () {
-  gulp.src(output + '/app.js')
-    .pipe(replace('servicesPath: \'/api', 'servicesPath: \'' + contextPath + '/services'))
-    .pipe(gulp.dest(output));
-
-  gulp.src(output + '/app.css')
-  .pipe(replace('/assets', contextPath + '/assets'))
-  .pipe(replace('/styles', contextPath + '/styles'))
-  .pipe(gulp.dest(output));
-
-  gulp.src(output + '/styles/css/*.css')
-  .pipe(replace('/assets', contextPath + '/assets'))
-  .pipe(replace('/styles', contextPath + '/styles'))
-  .pipe(gulp.dest(output + '/styles/css' ));
-
-});
+//
+//gulp.task('replace', function () {
+//  gulp.src(output + '/app.js')
+//    .pipe(replace('servicesPath: \'/api', 'servicesPath: \'' + contextPath + '/services'))
+//    .pipe(gulp.dest(output));
+//
+//  gulp.src(output + '/app.css')
+//  .pipe(replace('/assets', contextPath + '/assets'))
+//  .pipe(replace('/styles', contextPath + '/styles'))
+//  .pipe(gulp.dest(output));
+//
+//  gulp.src(output + '/styles/css/*.css')
+//  .pipe(replace('/assets', contextPath + '/assets'))
+//  .pipe(replace('/styles', contextPath + '/styles'))
+//  .pipe(gulp.dest(output + '/styles/css' ));
+//
+//});
 
 gulp.task('rev', function () {
 
