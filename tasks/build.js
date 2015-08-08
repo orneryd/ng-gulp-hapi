@@ -92,28 +92,28 @@ gulp.task('scripts', function () {
     .pipe(sort())
     .pipe(angularTemplatecache({
       root: 'views',
-      module: 'byo-web-ui'
+      module: 'ng-gulp-hapi'
     }));
 
   var directives = gulp.src('client/directives/**/*.html')
     .pipe(sort())
     .pipe(angularTemplatecache({
       root: 'directives',
-      module: 'byo.directives'
+      module: 'app.directives'
     }));
 
   var components = gulp.src('client/components/**/*.html')
     .pipe(sort())
     .pipe(angularTemplatecache({
       root: 'components',
-      module: 'byo-web-ui'
+      module: 'ng-gulp-hapi'
     }));
 
   var modals = gulp.src('client/modals/**/*.html')
     .pipe(sort())
     .pipe(angularTemplatecache({
       root: 'modals',
-      module: 'byo-web-ui'
+      module: 'ng-gulp-hapi'
     }));
 
   var app = gulp.src(output + '/app.js');
