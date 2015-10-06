@@ -6,15 +6,23 @@ angular.module('ng-gulp-hapi')
       .state('modal', {
         parent: 'main',
         url: 'modal',
-        onEnter: function($modal){
+        params: {
+          fromState: undefined
+        },
+        onEnter: function($modal, $stateParams){
           this.$modalInstance = $modal.open({
             templateUrl: 'views/main/modal/modal.html',
             controller: 'ModalCtrl',
             controllerAs: 'modal'
           });
+          this.$modalInstance.result.finally(function () {
+            $state.go($stateParams.fromState);
+          });
         },
         onExit: function(){
-          this.$modalInstance.dismiss();
+          if(!this.$modalInstance.result.$$state.status){
+            this.$modalInstance.dismiss();
+          }
         }
       });
   });
