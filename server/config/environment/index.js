@@ -6,7 +6,7 @@ var _ = require('lodash');
 // All configurations will extend these options
 // ============================================
 var all = {
-  env: process.env.NODE_ENV,
+  env: process.env.NODE_ENV || 'local',
 
   // Root path of server
   appRoot: path.normalize(__dirname + '/../../../client'),
