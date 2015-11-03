@@ -9,7 +9,7 @@ angular.module('ng-gulp-hapi')
         params: {
           fromState: undefined
         },
-        onEnter: function($modal, $stateParams){
+        onEnter: function($state, $stateParams, $modal){
           this.$modalInstance = $modal.open({
             templateUrl: 'views/main/modal/modal.html',
             controller: 'ModalCtrl',
